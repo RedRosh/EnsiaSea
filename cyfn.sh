@@ -7,6 +7,7 @@ cd ./test-network && ./network.sh down && cd ..
 echo "-----------------------------------------------"
 echo "            2- Creating the network , channel ."
 echo "-----------------------------------------------"
+cd ./chaincode  && npm install && cd ..
 cd ./test-network &&  ./network.sh up createChannel -c mychannel -ca  && cd ..
 echo "-----------------------------------------------"
 echo "            3- Deploying the Chaincode "

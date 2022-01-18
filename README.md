@@ -2,26 +2,36 @@
 
 # Introduction
 
----
-
 Introduction About this project tools / diagrams / goals
 
 # How to Setup The Project in ubuntu / Wsl2
 
----
-
 - ## Install all the dependencies
+
   1.  _Make sure to update the system_
-      - `sudo apt-get install update`
+
+      - ```
+        sudo apt-get install update
+        ```
+
   2.  _Install Nodejs & npm_
-      - `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
-      - `sudo apt install nodejs`
-      - `sudo apt install build-essential`
+
+      - ```
+        curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+        ```
+      - ```
+        sudo apt install nodejs
+        ```
+      - ```
+        sudo apt install build-essential
+        ```
+
   3.  _Install git & curl_
       - `sudo apt install curl git`
   4.  _Install docker & docker-compose_ - `apt-get install ca-certificates gnupg lsb-release` - `echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null` - `sudo apt-get update` - `sudo apt-get install docker-ce docker-ce-cli containerd.io` - `sudo apt-get install docker-compose`
   5.  _Starting docker service_ 1. **Using Ubuntu** : - `sudo systemctl start docker` - `sudo systemctl enable docker` 2. **Using Wsl** : - `git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git` - `cd ubuntu-wsl2-systemd-script/` - `bash ubuntu-wsl2-systemd-script.sh`
       Ps : _Make sure to restart the ubuntu shell_
+
 - ## Setting up the project structure / files
   1. **Clone the repo**
      `git clone url`

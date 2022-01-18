@@ -1,53 +1,54 @@
 # Welcome To EnsiaSea
 
-# Introduction
+## Introduction
 
 Introduction About this project tools / diagrams / goals
 
-# How to Setup The Project in ubuntu / Wsl2
+## How to Setup The Project in ubuntu / Wsl2
 
 - ## Install all the dependencies
 
-  1.  _Make sure to update the system_
+  1. _Make sure to update the system_
 
-      1- ```
-      sudo apt-get install update
+     1-
 
-      ```
+     ```
+     sudo apt-get install update
+     ```
 
-      ```
+  2. _Install Nodejs & npm_
 
-  2.  _Install Nodejs & npm_
+     1- ```
+     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
-      1- ```
-      curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+     ````
 
-      ````
-      2- ```
-      sudo apt install nodejs
-      ````
+     2- ```
+     sudo apt install nodejs
+     ````
 
-      3- ```
-      sudo apt install build-essential
+     3- ```
+     sudo apt install build-essential
 
-      ```
+     ```
 
-      ```
+     ```
 
-  3.  _Install git & curl_
-      - `sudo apt install curl git`
-  4.  _Install docker & docker-compose_ - `apt-get install ca-certificates gnupg lsb-release` - `echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null` - `sudo apt-get update` - `sudo apt-get install docker-ce docker-ce-cli containerd.io` - `sudo apt-get install docker-compose`
-  5.  _Starting docker service_ 1. **Using Ubuntu** : - `sudo systemctl start docker` - `sudo systemctl enable docker` 2. **Using Wsl** : - `git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git` - `cd ubuntu-wsl2-systemd-script/` - `bash ubuntu-wsl2-systemd-script.sh`
-      Ps : _Make sure to restart the ubuntu shell_
+  3. _Install git & curl_
+     - `sudo apt install curl git`
+  4. _Install docker & docker-compose_ - `apt-get install ca-certificates gnupg lsb-release` - `echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null` - `sudo apt-get update` - `sudo apt-get install docker-ce docker-ce-cli containerd.io` - `sudo apt-get install docker-compose`
+  5. _Starting docker service_ 1. **Using Ubuntu** : - `sudo systemctl start docker` - `sudo systemctl enable docker` 2. **Using Wsl** : - `git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git` - `cd ubuntu-wsl2-systemd-script/` - `bash ubuntu-wsl2-systemd-script.sh`
+     Ps : _Make sure to restart the ubuntu shell_
 
 - ## Setting up the project structure / files
+
   1. **Clone the repo**
      `git clone url`
   2. **Install Samples, Binaries, and Docker Images**
      `curl -sSL https://bit.ly/2ysbOFE | bash -s`
      `sudo curl -sSL https://bit.ly/2ysbOFE | bash -s`
      Ps : You Need to run the same command with sudo and without it , the following command may also work .  
-      `curl -sSL https://bit.ly/2ysbOFE | sudo bash -s `
+      `curl -sSL https://bit.ly/2ysbOFE | sudo bash -s`
   3. **Changing permission of the folder fabric-samples**
      `sudo su`
      `sudo chmod -R 777 ./fabric-samples`
@@ -65,7 +66,9 @@ Introduction About this project tools / diagrams / goals
      `./cau.sh`
      Ps : You can check the server , you ll see logs of the requests .
   7. **YOU ARE READY TO GO**
+
 - ## Testing if the blockchain is up using blockchain explorer
+
   `http://localhost:8080/`
   Ps : Password = admin / username = admin
 

@@ -111,10 +111,10 @@ Introduction About this project tools / diagrams / goals
         ```
 
      2. ```
-        sudo chmod -R 777 ./fabric-samples
+         chmod -R 777 ./fabric-samples
         ```
      3. ```
-        sudo chmod -R 777 .
+         chmod -R 777 .
         ```
         _Ps : If you could not copy/remove a file , make sure to verify your permission ._
 

@@ -32,26 +32,30 @@ Introduction About this project tools / diagrams / goals
      - ```
          sudo apt install curl git
        ```
-  4. _Install docker & docker-compose_
+  4. _Install docker & docker-composer_
 
      1. ```
-        apt-get install ca-certificates gnupg lsb-release
+        sudo apt-get install ca-certificates gnupg lsb-release
         ```
-
      2. ```
-        echo \ "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
         ```
-
      3. ```
-        sudo apt-get update
+         echo \
+        "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
         ```
 
      4. ```
-        sudo apt-get install docker-ce docker-ce-cli containerd.io
+        sudo apt-get update
         ```
 
      5. ```
-        sudo apt-get install docker-compose`
+        sudo apt-get install docker-ce docker-ce-cli containerd.io
+        ```
+
+     6. ```
+        sudo apt-get install docker-composer
         ```
 
   5. _Starting docker service_
@@ -69,7 +73,7 @@ Introduction About this project tools / diagrams / goals
      2. **Using Wsl** :
 
         1. ```
-           git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
+           sudo git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
            ```
         2. ```
            cd ubuntu-wsl2-systemd-script/
@@ -78,7 +82,15 @@ Introduction About this project tools / diagrams / goals
         3. ```
            bash ubuntu-wsl2-systemd-script.sh
            ```
+
            _Ps : Make sure to restart the ubuntu shell_
+
+        4. ```
+           sudo systemctl start docker
+           ```
+        5. ```
+           sudo systemctl enable docker
+           ```
 
 - ### Setting up the project structure / files
 

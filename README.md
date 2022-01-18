@@ -6,7 +6,7 @@ Introduction About this project tools / diagrams / goals
 
 ## How to Setup The Project in ubuntu / Wsl2
 
-- ## Install all the dependencies
+- ### Install all the dependencies
 
   1. _Make sure to update the system_
 
@@ -80,12 +80,12 @@ Introduction About this project tools / diagrams / goals
            ```
            _Ps : Make sure to restart the ubuntu shell_
 
-- ## Setting up the project structure / files
+- ### Setting up the project structure / files
 
   1. **Clone the repo**
 
      - ```
-         git clone https://github.com/RedRosh/EnsiaSea.git
+       git clone https://github.com/RedRosh/EnsiaSea.git
        ```
 
   2. **Install Samples, Binaries, and Docker Images**
@@ -105,41 +105,58 @@ Introduction About this project tools / diagrams / goals
         ```
 
   3. **Changing permission of the folder fabric-samples**
-     `sudo su`
-     `sudo chmod -R 777 ./fabric-samples`
-     Ps : If you could not copy/remove a file , make sure to verify your permission .
+
+     1. ```
+        sudo su
+        ```
+
+     2. ```
+        sudo chmod -R 777 ./fabric-samples
+        ```
+     3. ```
+        sudo chmod -R 777 .
+        ```
+        _Ps : If you could not copy/remove a file , make sure to verify your permission ._
+
   4. **Extract the folders that we need to use from fabric-samples**
-     `chmod 777 bp.sh`
-     `./bp.sh`
-     Ps : bp stands for build project .
+
+     - ```
+       ./bp.sh
+       ```
+       _Ps : bp stands for build project ._
+
   5. **Create the network & setup the blockchain & launch blockchain explorer / server**
-     `chmod 777 cyfn.sh`
-     `./cyfn.sh`
-     Ps : blockchain explorer is running on port 8080 & server running on port 5000
-  6. **Creating Admin / User / connect the hyperledger Application to blockchain** - open new terminal - run the following code :
-     `chmod 777 cau.sh`
-     `./cau.sh`
-     Ps : You can check the server , you ll see logs of the requests .
+     - ```
+       ./cyfn.sh
+       ```
+       _Ps : blockchain explorer is running on port 8080 & server running on port 5000_
+  6. **Creating Admin / User / connect the hyperledger Application to blockchain**
+
+     - Open new terminal - run the following code :
+
+       - ```
+         ./cau.sh
+         ```
+
+     _Ps : You can check the server , you ll see logs of the requests ._
+
   7. **YOU ARE READY TO GO**
 
-- ## Testing if the blockchain is up using blockchain explorer
+- ### Testing if the blockchain is up using blockchain explorer
 
-  `http://localhost:8080/`
-  Ps : Password = admin / username = admin
+  Link : [Click Here](http://localhost:8080/)
 
-# TODO
+  _Ps : Password = admin / username = admin_
 
----
+## TODO
 
-[X] - Setup blockchain .
-[X] - create an api in order communicate with blockchain .
-[ ] - structure of database .
-[ ] - create back-end of EnsiaSea .
-[ ] - create front-end of EnsiaSea .
+- [x] - Setup blockchain .
+- [x] - create an api in order communicate with blockchain .
+- [ ] - structure of database .
+- [ ] - create back-end of EnsiaSea .
+- [ ] - create front-end of EnsiaSea .
 
-# Ressources
-
----
+## Ressources
 
 - Installing Node js : [Click Here](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/)
 - Installing Docker : [Click Here](https://docs.docker.com/engine/install/ubuntu/)

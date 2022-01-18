@@ -10,21 +10,29 @@ Introduction About this project tools / diagrams / goals
 
   1.  _Make sure to update the system_
 
-      - ```
-        sudo apt-get install update
-        ```
+      1- ```
+      sudo apt-get install update
+
+      ```
+
+      ```
 
   2.  _Install Nodejs & npm_
 
-      - ```
-        curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-        ```
-      - ```
-        sudo apt install nodejs
-        ```
-      - ```
-        sudo apt install build-essential
-        ```
+      1- ```
+      curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+      ````
+      2- ```
+      sudo apt install nodejs
+      ````
+
+      3- ```
+      sudo apt install build-essential
+
+      ```
+
+      ```
 
   3.  _Install git & curl_
       - `sudo apt install curl git`

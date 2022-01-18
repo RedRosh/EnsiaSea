@@ -1,0 +1,6 @@
+/config
+bin
+test-network
+application/wallet
+chaincode/node_modules
+application/node_modules

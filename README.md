@@ -11,7 +11,7 @@ Introduction About this project tools / diagrams / goals
   1. _Make sure to update the system_
 
      - ```
-       sudo apt-get install update
+       sudo apt-get update
        ```
 
   2. _Install Nodejs & npm_

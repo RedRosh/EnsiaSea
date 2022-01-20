@@ -13,8 +13,11 @@ Introduction About this project tools / diagrams / goals
      - ```
        sudo apt-get update
        ```
-
-  2. _Install Nodejs & npm_
+  2. _Install git & curl_
+     - ```
+         sudo apt install curl git
+       ```
+  3. _Install Nodejs & npm_
 
      1. ```
         curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -28,11 +31,10 @@ Introduction About this project tools / diagrams / goals
         sudo apt install build-essential
         ```
 
-  3. _Install git & curl_
-     - ```
-         sudo apt install curl git
-       ```
+  
   4. _Install docker & docker-compose_
+
+      _Ps : if you have any problem with one of the following commands, check the [documentation](https://docs.docker.com/engine/install/ubuntu/)_
 
      1. ```
         sudo apt-get install ca-certificates gnupg lsb-release
@@ -83,7 +85,15 @@ Introduction About this project tools / diagrams / goals
            bash ubuntu-wsl2-systemd-script.sh
            ```
 
-           _Ps : Make sure to restart the ubuntu shell_
+           _Ps : Make sure to restart the ubuntu shell by doing this :_
+
+            1. Open Windows PowerShell
+            2. Enter this command :
+            
+               ```
+               wsl --shutdown
+               ```
+            3. Open a new ubuntu shell and continue
 
         4. ```
            sudo systemctl start docker
@@ -109,7 +119,7 @@ Introduction About this project tools / diagrams / goals
         sudo curl -sSL https://bit.ly/2ysbOFE | sudo bash -s
         ```
 
-     _Ps : You Need to run the same command with sudo and without it , the following command may also work_ .
+     [comment]: <> (_Ps : You Need to run the same command with sudo and without it , the following command may also work_ .)
 
   3. **Changing permission of the folder fabric-samples**
 
@@ -142,7 +152,7 @@ Introduction About this project tools / diagrams / goals
      - Open new terminal - run the following code :
 
        - ```
-         ./cau.sh
+         ./cad.sh
          ```
 
      _Ps : You can check the server , you ll see logs of the requests ._
@@ -151,7 +161,7 @@ Introduction About this project tools / diagrams / goals
 
 - ### Testing if the blockchain is up using blockchain explorer
 
-  Link : [Click Here](http://localhost:8080/)
+  Link : [localhost](http://localhost:8080/)
 
   _Ps : Password = admin / username = admin_
 

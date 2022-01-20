@@ -32,7 +32,7 @@ Introduction About this project tools / diagrams / goals
      - ```
          sudo apt install curl git
        ```
-  4. _Install docker & docker-composer_
+  4. _Install docker & docker-compose_
 
      1. ```
         sudo apt-get install ca-certificates gnupg lsb-release
@@ -55,7 +55,7 @@ Introduction About this project tools / diagrams / goals
         ```
 
      6. ```
-        sudo apt-get install docker-composer
+        sudo apt-get install docker-compose
         ```
 
   5. _Starting docker service_
@@ -70,7 +70,7 @@ Introduction About this project tools / diagrams / goals
            sudo systemctl enable docker
            ```
 
-     2. **Using Wsl** :
+     2. **Using Wsl2** :
 
         1. ```
            sudo git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
@@ -103,18 +103,13 @@ Introduction About this project tools / diagrams / goals
   2. **Install Samples, Binaries, and Docker Images**
 
      1. ```
-        curl -sSL https://bit.ly/2ysbOFE | bash -s
+        cd EnsiaSea
         ```
-
      2. ```
-        sudo curl -sSL https://bit.ly/2ysbOFE | bash -s
+        sudo curl -sSL https://bit.ly/2ysbOFE | sudo bash -s
         ```
 
      _Ps : You Need to run the same command with sudo and without it , the following command may also work_ .
-
-     3. ```
-        curl -sSL https://bit.ly/2ysbOFE | sudo bash -s
-        ```
 
   3. **Changing permission of the folder fabric-samples**
 

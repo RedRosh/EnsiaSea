@@ -171,8 +171,8 @@
 
 - [x] - Setup blockchain .
 - [x] - create an api in order communicate with blockchain .
-- [ ] - structure of database .
-- [ ] - create back-end of EnsiaSea .
+- [X] - structure of database .
+- [X] - create back-end of EnsiaSea ( In Progress ) .
 - [ ] - create front-end of EnsiaSea .
 
 ## Ressources

@@ -6,6 +6,7 @@ const {
   updateAsset,
   deleteAsset,
   TransfertAsset,
+  historyAssets,
 } = require("../controllers/basicTransfer");
 
 const router = express.Router();
@@ -16,6 +17,7 @@ router
   .post("/assets", createAsset)
   .put("/assets", updateAsset)
   .delete("/assets/:id", deleteAsset)
-  .put("/assets/transfert/:id", TransfertAsset);
+  .put("/assets/transfert/:id", TransfertAsset)
+  .get("/assets/history/:id", historyAssets);
 
 module.exports = router;

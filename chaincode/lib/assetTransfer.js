@@ -146,6 +146,47 @@ class AssetTransfer extends Contract {
     }
     return JSON.stringify(allResults);
   }
+
+  // GetAssetHistory returns the chain of custody for an asset since issuance.
+  async GetAssetHistory(ctx, assetId) {
+    let resultsIterator = await ctx.stub.getHistoryForKey(assetId);
+    console.log(resultsIterator);
+    let results = await this._GetAllResults(resultsIterator, true);
+    return JSON.stringify(results);
+  }
+
+  async _GetAllResults(iterator, isHistory) {
+    let allResults = [];
+    let res = await iterator.next();
+    while (!res.done) {
+      if (res.value && res.value.value.toString()) {
+        let jsonRes = {};
+        console.log(res.value.value.toString("utf8"));
+        if (isHistory && isHistory === true) {
+          jsonRes.TxId = res.value.txId;
+          jsonRes.Timestamp = res.value.timestamp;
+          try {
+            jsonRes.Value = JSON.parse(res.value.value.toString("utf8"));
+          } catch (err) {
+            console.log(err);
+            jsonRes.Value = res.value.value.toString("utf8");
+          }
+        } else {
+          jsonRes.Key = res.value.key;
+          try {
+            jsonRes.Record = JSON.parse(res.value.value.toString("utf8"));
+          } catch (err) {
+            console.log(err);
+            jsonRes.Record = res.value.value.toString("utf8");
+          }
+        }
+        allResults.push(jsonRes);
+      }
+      res = await iterator.next();
+    }
+    iterator.close();
+    return allResults;
+  }
 }
 
 module.exports = AssetTransfer;

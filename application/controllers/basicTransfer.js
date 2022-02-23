@@ -123,7 +123,7 @@ exports.deleteAsset = async (req, res, next) => {
 //* access private
 exports.TransfertAsset = async (req, res, next) => {
   let assetId = req.param("id");
-  let { newOwner } = req.body();
+  let { newOwner } = req.body;
   try {
     const response = await network.contract.submitTransaction(
       "TransferAsset",
@@ -139,6 +139,29 @@ exports.TransfertAsset = async (req, res, next) => {
     res.status(400).json({
       success: false,
       message: `Failed to Transfert OwnerShip an asset : ${err}`,
+    });
+  }
+};
+
+//* desc  create an asset
+//* route Get /api/v1/assets/history/{id}
+//* access private
+exports.historyAssets = async (req, res, next) => {
+  let assetId = req.param("id");
+  try {
+    const response = await network.contract.submitTransaction(
+      "GetAssetHistory",
+      assetId
+    );
+    res.status(200).json({
+      success: true,
+      message: "Getting History of an Asset",
+      data: JSON.parse(response.toString()),
+    });
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: `Failed to get the history of an asset : ${err}`,
     });
   }
 };

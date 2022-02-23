@@ -54,7 +54,7 @@ class AssetTransfer extends Contract {
       ID: id,
       Type: type,
       Owner: owner,
-      CheckSum: checkSum, // not necessary
+      CheckSum: checkSum,
       Price: price,
     };
 
@@ -90,11 +90,12 @@ class AssetTransfer extends Contract {
       CheckSum: checkSum, // not necessary
       Price: price,
     };
-    // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
-    return ctx.stub.putState(
+    ctx.stub.putState(
       id,
       Buffer.from(stringify(sortKeysRecursive(updatedAsset)))
+      // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
     );
+    return JSON.stringify(updatedAsset);
   }
 
   // DeleteAsset deletes an given asset from the world state.
@@ -120,7 +121,7 @@ class AssetTransfer extends Contract {
     asset.Owner = newOwner;
     // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
     ctx.stub.putState(id, Buffer.from(stringify(sortKeysRecursive(asset))));
-    return oldOwner;
+    return JSON.stringify(asset);
   }
 
   // GetAllAssets returns all assets found in the world state.

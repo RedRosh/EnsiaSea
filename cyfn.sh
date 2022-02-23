@@ -33,9 +33,9 @@ echo "------------------------------------------------------"
 echo "----------------------------------------------------"
 echo "    5-1 Deleting the admin/user"
 echo "----------------------------------------------------"
-cd application && rm -R wallet && npm install
+cd application && rm -R wallet 
 echo "----------------------------------------------------"
 echo "    5-1 Starting The server on port 5000"
 echo "----------------------------------------------------"
-npm start &
+npm install && npm start
 
